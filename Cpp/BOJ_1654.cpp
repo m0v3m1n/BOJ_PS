@@ -1,3 +1,6 @@
+// 백준 1654번, 랜선 자르기.
+// 문제 링크 : https://www.acmicpc.net/problem/1654
+
 #include <iostream>
 
 int K_Arr[10001];
