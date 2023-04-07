@@ -1,6 +1,8 @@
 // 백준 번호 2178번, 미로 탐색
 // 문제 링크 : https://www.acmicpc.net/problem/2178
 
+// This problem has solved by BFS.
+
 #include <iostream>
 #include <vector>
 #include <queue>
