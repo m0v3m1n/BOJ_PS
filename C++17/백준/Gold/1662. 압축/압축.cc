@@ -38,5 +38,6 @@ int main()
     std::cin >> S;
 
     std::cout << rec(S, 0);
+    
     return 0;
 }
