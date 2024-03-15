@@ -7,16 +7,16 @@ int main()
 	std::cin.tie(NULL);
 	std::cout.tie(NULL);
 
-	int N, sum = 0; std::cin >> N;
-	std::vector<int> dist(N - 1);
-	std::vector<int> oil(N);
+	long long N, sum = 0; std::cin >> N;
+	std::vector<long long> dist(N - 1);
+	std::vector<long long> oil(N);
 
 	for (int i = 0; i < N - 1; i++)
 		std::cin >> dist[i];
 	for (int i = 0; i < N; i++)
 		std::cin >> oil[i];
 
-	int cur = 0, next = 1;
+	long long cur = 0, next = 1;
 	sum += (oil[0] * dist[0]);
 
 	while (next < N - 1)
