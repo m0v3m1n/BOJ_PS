@@ -6,7 +6,9 @@
 // --> r = X / 9, c = X % 9 로 한다면?
 // 0부터 80까지 돌았을 때, (0,0) ~ (8,8) 가능.
 
-bool check(int map[9][9], int r, int c, int N)
+int map[9][9];
+
+bool check(int r, int c, int N)
 {
 	for (int i = 0; i < 9; i++)
 	{
@@ -26,16 +28,7 @@ bool check(int map[9][9], int r, int c, int N)
 	return true;
 }
 
-bool full_check(int map[9][9])
-{
-	for (int i = 0; i < 9; i++)
-		for (int j = 0; j < 9; j++)
-			if (map[i][j] == 0)
-				return false;
-	return true;
-}
-
-void BT(int map[9][9], int X)
+void BT(int X)
 {
 	if (X == 81)
 	{
@@ -55,33 +48,29 @@ void BT(int map[9][9], int X)
 	{
 		for (int i = 1; i <= 9; i++)
 		{
-			if (check(map, r, c, i)) // 만약 가로, 세로, 3x3 격자에 같은 숫자가 없다면?
+			if (check(r, c, i)) // 만약 가로, 세로, 3x3 격자에 같은 숫자가 없다면?
 			{
 				map[r][c] = i;
-				BT(map, X + 1); // 다음 칸에 i 넣으면서 재귀 들어감
+				BT(X + 1); // 다음 칸에 i 넣으면서 재귀 들어감
 			}
 		}
 		map[r][c] = 0;
 	}
 	else // 0 아니면?
 	{
-		BT(map, X + 1);
+		BT(X + 1);
 	}
 }
 
 int main()
 {
 	std::string S;
-	int map[9][9];
 
 	for (int i = 0; i < 9; i++)
 	{
-		//std::cin >> S;
-		//for (int j = 0; j < 9; j++)
-		//	map[i][j] = S[j] - '0';
 		for (int j = 0; j < 9; j++)
 			std::cin >> map[i][j];
 	}
 
-	BT(map, 0);
+	BT(0);
 }
