@@ -3,6 +3,10 @@
 
 int main()
 {
+	std::ios_base::sync_with_stdio(false);
+	std::cin.tie(nullptr);
+	std::cout.tie(nullptr);
+
 	long long N, sum = 0, tmp = 0; std::cin >> N;
 	std::string S; std::cin >> S;
 
