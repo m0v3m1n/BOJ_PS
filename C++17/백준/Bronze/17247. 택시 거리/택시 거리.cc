@@ -4,6 +4,10 @@
 
 int main()
 {
+    std::ios_base::sync_with_stdio(false);
+    std::cin.tie(nullptr);
+    std::cout.tie(nullptr);
+
     int N, M, tmp;
     bool flag = false;
     std::pair<int, int> A, B;
@@ -21,7 +25,10 @@ int main()
                     flag = true;
                 }
                 else
+                {
                     B = { i, j };
+                    break;
+                }
         }
 
     std::cout << std::abs(B.first - A.first) + std::abs(B.second - A.second);
