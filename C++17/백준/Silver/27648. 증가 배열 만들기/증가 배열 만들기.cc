@@ -10,14 +10,13 @@ int main()
     int N, M, K; std::cin >> N >> M >> K;
     std::vector<std::vector<int>> V(N, std::vector<int>(M));
 
-    for (int i = 0; i < N; i++)
-        for (int j = 0; j < M; j++)
-            V[i][j] = i + 1 + j;
-
-    if (V[N - 1][M - 1] > K)
+    if(K < N + M - 1)
         std::cout << "NO";
     else
     {
+        for (int i = 0; i < N; i++)
+            for (int j = 0; j < M; j++)
+                V[i][j] = i + 1 + j;
         std::cout << "YES" << '\n';
 
         for (auto& K : V)
