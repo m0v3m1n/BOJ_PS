@@ -42,6 +42,7 @@ int main()
 		else
 		{
 			// 10, 15, 20일 때 14가 들어올 경우? --> 15 자리에 14 넣어야 함. --> upper_bound?
+            // 해보니까 아니였음... lower_bound로 10 찾은 뒤 10 다음 숫자를 14로 대체하면 됨.
 
 			int idx = lower_bound(tails, V[i]);
 
