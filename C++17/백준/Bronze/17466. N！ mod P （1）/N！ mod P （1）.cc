@@ -9,9 +9,14 @@ int main()
 	long long N, P, res = 1;
 	std::cin >> N >> P;
 
-	for (int i = 1; i <= N; i++)
-		res = ((res % P) * (i % P)) % P;
+	if (N == P)
+		std::cout << 0;
+	else
+	{
+		for (int i = 1; i <= N; i++)
+			res = (res * (i % P)) % P;
+		std::cout << res;
+	}
 
-	std::cout << res;
 	return 0;
 }
