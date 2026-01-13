@@ -10,6 +10,10 @@ bool cmp(std::pair<std::string, int> a, std::pair<std::string, int> b)
 
 int main()
 {
+	std::ios_base::sync_with_stdio(false);
+	std::cin.tie(nullptr);
+	std::cout.tie(nullptr);
+
 	std::string tmpString;
 	int N, M, K, tmpInt, minScore = 0, maxScore = 0;
 	std::cin >> N >> M >> K;
